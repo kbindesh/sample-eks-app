@@ -199,7 +199,6 @@ sudo service jenkins restart
 - **Type**: Pipeline
 - Under **Build Triggers** section, check **GitHub hook trigger for GITScm polling** option.
 - Under **Pipeline** section:
-
   - **Definition**: Pipeline script from SCM
   - **SCM**: Git
   - **Repository URL**: <YOUR_GITHUB_REPOSITORY_URL>
@@ -214,3 +213,5 @@ sudo service jenkins restart
 ## Step-07: Verify the created Docker Image in Docker Hub
 
 - Navigate to your dockerhub account, and verify if the docker image got created successfully.
+
+#### some modification to the repo
