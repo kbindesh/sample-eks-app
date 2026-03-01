@@ -39,7 +39,9 @@ pipeline {
         stage('Deploy App to EKS') {
             steps {
                 withAWS(credentials: env.AWS_CRED_ID, region: env.AWS_REGION) {
-                    sh 'kubectl get pods -A'
+                    sh 'kubectl config view'
+                    sh 'aws sts get-caller-identity'
+                    sh 'kubectl --kubeconfig=/var/lib/jenkins/.kube/config get pods -A'
                     sh 'kubectl apply -f k8s-specifications/flaskapp-deployment.yml'
                     echo "Python Flask app deployed successfully"
                 }
